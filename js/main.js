@@ -5,6 +5,20 @@ var newMap
 var markers = []
 
 /**
+ * Generate tab index
+ */
+const tabIndexGenerator = () => {
+  let inst = 0
+  return () => {
+    while (true) {
+      return inst++
+    }
+  }
+}
+
+const tabIndex = tabIndexGenerator()
+
+/**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -157,7 +171,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
-  li.tabIndex = 1;
+  li.tabIndex = tabIndex();
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
