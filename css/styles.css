@@ -69,7 +69,7 @@ nav h1 a {
   padding: 1% 2% 1.2%;
   list-style: none;
   background-color: #eee;
-  font-size: 17px;
+  font-size: 1em;
   /* position: fixed; */
   /* top: 50px; */
   margin: 0;
@@ -195,7 +195,7 @@ nav h1 a {
   position: fixed;
   right: 0;
   top: calc(4% + 50px);
-  bottom: 0px;
+  bottom: 0;
   width: 50%;
 }
 .inside #map {
@@ -210,7 +210,7 @@ nav h1 a {
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
-  font-size: 20pt;
+  font-size: 2em;
   font-weight: 200;
   letter-spacing: 0;
   margin: 1% 0 2%;
@@ -222,17 +222,17 @@ nav h1 a {
 	width: 100%;
 }
 #restaurant-address {
-  font-size: 12pt;
-  margin: 10px 0px;
+  font-size: 1.2em;
+  margin: 1% 0;
 }
 #restaurant-cuisine {
   background-color: #333;
   color: #ddd;
-  font-size: 12pt;
+  font-size: 1.2em;
   font-weight: 300;
   letter-spacing: 10px;
-  margin: 0 0 20px;
-  padding: 2px 0;
+  margin: 0 0 2%;
+  padding: 0.5% 0;
   text-align: center;
   text-transform: uppercase;
 	width: 100%;
@@ -250,10 +250,11 @@ nav h1 a {
 }
 #reviews-container h2 {
   color: #f58500;
-  font-size: 24pt;
+  font-size: 2.4em;
   font-weight: 300;
   letter-spacing: -1px;
-  padding-bottom: 1pt;
+  padding-bottom: 0.1em;
+  text-align: center;
 }
 #reviews-list {
   display: grid;
@@ -270,10 +271,14 @@ nav h1 a {
   padding: 0 3% 3%;
 }
 #reviews-list li p {
-  margin: 0 0 10px;
+  margin: 0 0 1%;
 }
 #restaurant-hours td {
   color: #666;
+}
+.reviewer-name {
+  color: orange;
+  font-size: 1.2em;
 }
 
 /* ====================== Breakpoints ====================== */

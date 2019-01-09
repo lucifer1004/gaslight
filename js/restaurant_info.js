@@ -2,6 +2,20 @@ let restaurant;
 var newMap;
 
 /**
+ * Generate tab index
+ */
+const tabIndexGenerator = () => {
+  let inst = 0
+  return () => {
+    while (true) {
+      return inst++
+    }
+  }
+}
+
+const tabIndex = tabIndexGenerator()
+
+/**
  * Initialize map as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {  
@@ -82,16 +96,21 @@ fetchRestaurantFromURL = (callback) => {
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
+  name.tabIndex = tabIndex();
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
+  address.tabIndex = tabIndex();
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
+  image.alt = `picture for ${restaurant.name}`
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.tabIndex = tabIndex();
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
+  cuisine.tabIndex = tabIndex();
 
   // fill operating hours
   if (restaurant.operating_hours) {
@@ -106,6 +125,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
+  hours.tabIndex = tabIndex();
   for (let key in operatingHours) {
     const row = document.createElement('tr');
 
@@ -148,7 +168,9 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
+  li.tabIndex = tabIndex();
   const name = document.createElement('p');
+  name.className = 'reviewer-name'
   name.innerHTML = review.name;
   li.appendChild(name);
 
@@ -157,7 +179,7 @@ createReviewHTML = (review) => {
   li.appendChild(date);
 
   const rating = document.createElement('p');
-  rating.innerHTML = `Rating: ${review.rating}`;
+  rating.innerHTML = `Rating: ${'❤️'.repeat(review.rating)}`;
   li.appendChild(rating);
 
   const comments = document.createElement('p');
