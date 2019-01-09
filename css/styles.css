@@ -58,55 +58,53 @@ h6 {
 }
 
 /* ====================== Navigation ====================== */
-nav {
+#header {
   position: relative;
   width: 100%;
   padding: 1% 0;
   background-color: #252831;
   text-align: center;
 }
-nav h1 {
+#header h1 {
   margin: auto;
 }
-nav h1 a {
+#header h1 a {
   color: #fff;
   font-size: 1.4em;
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
 }
-#breadcrumb {
+#breadcrumb-ul {
   padding: 1% 2% 1.2%;
   list-style: none;
   background-color: #eee;
   font-size: 1em;
-  /* position: fixed; */
-  /* top: 50px; */
   margin: 0;
   height: 20px;
   width: 46%;
 }
 
 /* Display list items side by side */
-#breadcrumb li {
+#breadcrumb-ul li {
   display: inline;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
-#breadcrumb li + li:before {
+#breadcrumb-ul li + li:before {
   padding: 8px;
   color: black;
   content: '/\00a0';
 }
 
 /* Add a color to all links inside the list */
-#breadcrumb li a {
+#breadcrumb-ul li a {
   color: #0275d8;
   text-decoration: none;
 }
 
 /* Add a color on mouse-over */
-#breadcrumb li a:hover {
+#breadcrumb-ul li a:hover {
   color: #01447e;
   text-decoration: underline;
 }
@@ -343,7 +341,7 @@ nav h1 a {
   .inside #footer {
     width: 100%;
   }
-  #breadcrumb {
+  #breadcrumb-ul {
     position: relative;
     top: 0;
     width: 96%;
