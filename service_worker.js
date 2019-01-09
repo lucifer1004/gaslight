@@ -44,7 +44,7 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.open('myCache').then(cache => {
       return cache
-        .match(event.request)
+        .match(event.request, {ignoreSearch: true})
         .then(response => {
           if (response) {
             console.log('Found response in cache:', response)
