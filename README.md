@@ -12,3 +12,5 @@ In the **Restaurant** page, you can see detailed information of a restaurant, al
 # With http-server installed globally
 http-server -p 8000
 ```
+
+Then go to http://localhost:8000 to view the website.
