@@ -114,6 +114,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   image.className = 'restaurant-img'
   image.alt = `picture for ${restaurant.name}`
   image.src = DBHelper.imageUrlForRestaurant(restaurant)
+  image.srcset = `${DBHelper.imageUrlForRestaurant(restaurant)} 2x, ${DBHelper.imageUrlForRestaurant(restaurant, '1x')} 1x`
   image.tabIndex = tabIndex()
 
   const cuisine = document.getElementById('restaurant-cuisine')

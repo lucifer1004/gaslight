@@ -1,6 +1,6 @@
-self.addEventListener('install', function(event) {
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open('myCache').then(function(cache) {
+    caches.open('myCache').then(cache => {
       return cache.addAll([
         '/css/styles.css',
         '/data',
@@ -24,9 +24,9 @@ self.addEventListener('activate', event => {
   // Active worker won't be treated as activated until promise
   // resolves successfully.
   event.waitUntil(
-    caches.keys().then(function(cacheNames) {
+    caches.keys().then(cacheNames => {
       return Promise.all(
-        cacheNames.map(function(cacheName) {
+        cacheNames.map(cacheName => {
           if (!expectedCacheNames.includes(cacheName)) {
             console.log('Deleting out of date cache:', cacheName)
 
